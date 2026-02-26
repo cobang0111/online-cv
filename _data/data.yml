@@ -9,7 +9,7 @@ sidebar:
 
   # Profile information
   name: Gihoon Kim
-  tagline: Master's Student @ Yonsei University
+  tagline: Master's Student <br> @ Yonsei University
   avatar: profile.jpeg #place a 100x100 picture inside /assets/images/ folder and provide the name of the file below
 
   # Sidebar links
@@ -17,7 +17,7 @@ sidebar:
   timezone: Asia/Seoul # Enter your timezone, e.g., America/Havana, Africa/Casablanca, America/North_Dakota/Center
   #citizenship:
   #website: https://example.com/ # Include the full website URL, including "http://" or "https://".
-  linkedin: ""
+  #linkedin: ""
   #xing: ""
   github: cobang0111
   #telegram: # add your nickname without '@' sign
@@ -78,7 +78,7 @@ education:
     #    - Bullet point
     #    - Bullet point
   - degree: High School
-    highschool: Busan Science High School
+    university: Busan Science High School 
     time: 2016.03 - 2019.02
     #details: |
     #  Describe your study here lorem ipsum dolor sit amet, consectetuer
