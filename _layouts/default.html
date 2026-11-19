@@ -9,13 +9,19 @@
 {% include head.html %}
 
 <body>
-  <button onclick="print()" class="print-button d-print-none">
-    <i class="fas fa-file-pdf"></i>Print
-  </button>
+  <div class="page-actions d-print-none" aria-label="CV actions">
+    <button type="button" class="language-button" id="languageButton" aria-pressed="false">
+      <i class="fas fa-language" aria-hidden="true"></i><span data-language-label>한국어</span>
+    </button>
 
-  <button onclick="generatePDF()" class="pdf-button d-print-none" id="pdfButton">
-    <i class="fas fa-file-pdf"></i>PDF
-  </button>
+    <button type="button" onclick="print()" class="print-button">
+      <i class="fas fa-print" aria-hidden="true"></i>Print
+    </button>
+
+    <button type="button" onclick="generatePDF()" class="pdf-button" id="pdfButton">
+      <i class="fas fa-file-pdf" aria-hidden="true"></i>PDF
+    </button>
+  </div>
 
   <div class="wrapper">
     {% include sidebar.html %}
@@ -28,7 +34,8 @@
   {% include footer.html %}
 
   {% include scripts.html %}
-  <script src="{{ site.baseurl }}/assets/js/pdf-generator.js"></script>
+  <script src="{{ site.baseurl }}/assets/js/language-toggle.js"></script>
+  <script src="{{ site.baseurl }}/assets/js/pdf-generator.js?v=11"></script>
 </body>
 
 </html>

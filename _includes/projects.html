@@ -4,8 +4,8 @@
 
   <h2 class="section-title">
     <span class="fa-stack fa-xs">
-      <i class="fas fa-circle fa-stack-2x"></i>
-      <i class="fas fa-archive fa-stack-1x fa-inverse"></i>
+      <i class="fas fa-circle fa-stack-2x" aria-hidden="true"></i>
+      <i class="fas fa-archive fa-stack-1x fa-inverse" aria-hidden="true"></i>
     </span>
     {{ projects.title }}
   </h2>
@@ -17,19 +17,35 @@
   {% endif %}
 
   {% for project in projects.assignments %}
-    <div class="item">
+    <div class="item institution-item">
 
-      <span class="project-title">
-        {% if project.link %}
-        <a href="{{ project.link }}" target="_blank">{{ project.title }}</a>
-        {% else %}
-        {{ project.title }}
-        {% endif %}
+      {% if project.partner_logo %}
+      <span class="institution-mark{% if project.partner_logo_shape %} institution-mark--{{ project.partner_logo_shape }}{% endif %}" aria-hidden="true">
+        <img src="{{ site.baseurl }}/assets/images/institutions/{{ project.partner_logo }}" alt="" />
       </span>
-
-      {% if project.tagline %}
-      - <span class="project-tagline">{{ project.tagline }}</span>
       {% endif %}
+
+      <div class="institution-content">
+
+        <div class="upper-row project-upper-row">
+          <span class="project-title">
+            {% if project.link %}
+            <a href="{{ project.link }}" target="_blank" rel="noopener noreferrer" data-i18n-en="{{ project.title | escape }}" data-i18n-ko="{{ project.title_ko | default: project.title | escape }}">{{ project.title }}</a>
+            {% else %}
+            <span data-i18n-en="{{ project.title | escape }}" data-i18n-ko="{{ project.title_ko | default: project.title | escape }}">{{ project.title }}</span>
+            {% endif %}
+          </span>
+          {% if project.partner_time %}
+          <div class="time" data-i18n-en="{{ project.partner_time | escape }}" data-i18n-ko="{{ project.partner_time_ko | default: project.partner_time | escape }}">{{ project.partner_time }}</div>
+          {% endif %}
+        </div>
+
+        {% if project.partner %}
+        <span class="project-tagline" data-i18n-en="with {{ project.partner | escape }}" data-i18n-ko="{{ project.partner_line_ko | default: project.partner | escape }}">with {{ project.partner }}</span>
+        {% elsif project.tagline %}
+        <span class="project-tagline" data-i18n-en="{{ project.tagline | escape }}" data-i18n-ko="{{ project.tagline_ko | default: project.tagline | escape }}">{{ project.tagline }}</span>
+        {% endif %}
+      </div><!--//institution-content-->
 
     </div><!--//item-->
   {% endfor %}

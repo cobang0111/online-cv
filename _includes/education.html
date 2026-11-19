@@ -8,10 +8,17 @@
     </h2>
 
     {% for graduation in education.info %}
-    <div class="item">
-      <h4 class="degree">{{ graduation.degree }}</h4>
-      <h5 class="meta">{{ graduation.university }}</h5>
-      <div class="time">{{ graduation.time }}</div>
+    <div class="item institution-item institution-item--sidebar">
+      {% if graduation.logo %}
+      <span class="institution-mark{% if graduation.logo_shape %} institution-mark--{{ graduation.logo_shape }}{% endif %}" aria-hidden="true">
+        <img src="{{ site.baseurl }}/assets/images/institutions/{{ graduation.logo }}" alt="" />
+      </span>
+      {% endif %}
+      <div class="institution-content">
+        <h4 class="degree" data-i18n-en="{{ graduation.degree | escape }}" data-i18n-ko="{{ graduation.degree_ko | default: graduation.degree | escape }}">{{ graduation.degree }}</h4>
+        <h5 class="meta" data-i18n-en="{{ graduation.university | escape }}" data-i18n-ko="{{ graduation.university_ko | default: graduation.university | escape }}">{{ graduation.university }}</h5>
+        <div class="time" data-i18n-en="{{ graduation.time | escape }}" data-i18n-ko="{{ graduation.time_ko | default: graduation.time | escape }}">{{ graduation.time }}</div>
+      </div>
     </div><!--//item-->
     {% endfor %}
 
@@ -21,30 +28,39 @@
 
     <h2 class="section-title">
       <span class="fa-stack fa-xs">
-        <i class="fas fa-circle fa-stack-2x"></i>
-        <i class="fas fa-graduation-cap fa-stack-1x fa-inverse"></i>
+        <i class="fas fa-circle fa-stack-2x" aria-hidden="true"></i>
+        <i class="fas fa-graduation-cap fa-stack-1x fa-inverse" aria-hidden="true"></i>
       </span>
       {{ education.title }}
     </h2>
 
     {% for graduation in education.info %}
-    <div class="item">
+    <div class="item institution-item">
 
-      <div class="meta">
-
-        <div class="upper-row">
-          <h3 class="degree">{{ graduation.degree }}</h3>
-          <div class="time">{{ graduation.time }}</div>
-        </div><!--//upper-row-->
-
-        <div class="university">{{ graduation.university }}</div>
-      </div><!--//meta-->
-
-      {% if graduation.details %}
-      <div class="details">
-        {{ graduation.details | markdownify }}
-      </div><!--//details-->
+      {% if graduation.logo %}
+      <span class="institution-mark{% if graduation.logo_shape %} institution-mark--{{ graduation.logo_shape }}{% endif %}" aria-hidden="true">
+        <img src="{{ site.baseurl }}/assets/images/institutions/{{ graduation.logo }}" alt="" />
+      </span>
       {% endif %}
+
+      <div class="institution-content">
+
+        <div class="meta">
+
+          <div class="upper-row">
+            <h3 class="degree" data-i18n-en="{{ graduation.degree | escape }}" data-i18n-ko="{{ graduation.degree_ko | default: graduation.degree | escape }}">{{ graduation.degree }}</h3>
+            <div class="time" data-i18n-en="{{ graduation.time | escape }}" data-i18n-ko="{{ graduation.time_ko | default: graduation.time | escape }}">{{ graduation.time }}</div>
+          </div><!--//upper-row-->
+
+          <div class="university" data-i18n-en="{{ graduation.university | escape }}" data-i18n-ko="{{ graduation.university_ko | default: graduation.university | escape }}">{{ graduation.university }}</div>
+        </div><!--//meta-->
+
+        {% if graduation.details %}
+        <div class="details">
+          {{ graduation.details | markdownify }}
+        </div><!--//details-->
+        {% endif %}
+      </div><!--//institution-content-->
 
     </div><!--//item-->
     {% endfor %}

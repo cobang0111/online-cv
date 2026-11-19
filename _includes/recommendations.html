@@ -3,8 +3,8 @@ recommendations %}
 <section class="section recommendations-section">
   <h2 class="section-title">
     <span class="fa-stack fa-xs">
-      <i class="fas fa-circle fa-stack-2x"></i>
-      <i class="fas fa-medal fa-stack-1x fa-inverse"></i>
+      <i class="fas fa-circle fa-stack-2x" aria-hidden="true"></i>
+      <i class="fas fa-medal fa-stack-1x fa-inverse" aria-hidden="true"></i>
     </span>
     {{ recommendations.title }}
   </h2>
@@ -23,13 +23,13 @@ recommendations %}
         {% if recommendation.email %}
         <div>
           <a href="mailto:{{recommendation.email}}"
-            ><i class="fas fa-envelope mr-1"></i>{{ recommendation.email }}</a
+            ><i class="fas fa-envelope mr-1" aria-hidden="true"></i>{{ recommendation.email }}</a
           >
         </div>
         {% endif %} {% if recommendation.phone %}
         <div>
           <a href="tel:{{recommendation.phone}}">
-            <i class="fas fa-phone mr-1"></i>{{ recommendation.phone }}</a
+            <i class="fas fa-phone mr-1" aria-hidden="true"></i>{{ recommendation.phone }}</a
           >
         </div>
         {% endif %}

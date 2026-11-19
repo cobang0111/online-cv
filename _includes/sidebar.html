@@ -4,15 +4,28 @@
   <div class="profile-container">
 
     {% if sidebar.avatar %}
-    <img class="avatar" src="{{ site.baseurl }}/assets/images/{{ sidebar.avatar }}" alt="profile picture" />
+    <img class="avatar" src="{{ site.baseurl }}/assets/images/{{ sidebar.avatar }}" alt="{{ sidebar.name }}" />
     {% endif %}
 
     {% if sidebar.name %}
-    <h1 class="name">{{ sidebar.name }}</h1>
+    <h1 class="name" data-i18n-en="{{ sidebar.name | escape }}" data-i18n-ko="{{ sidebar.name_ko | default: sidebar.name | escape }}">{{ sidebar.name }}</h1>
     {% endif %}
 
     {% if sidebar.tagline %}
     <h3 class="tagline">{{ sidebar.tagline }}</h3>
+    {% endif %}
+
+    {% if sidebar.affiliation %}
+    <div class="profile-affiliation">
+      <span>@ {{ sidebar.affiliation.name }}</span>
+    </div>
+    {% endif %}
+
+    {% if sidebar.lab %}
+    <a class="lab-link" href="{{ sidebar.lab.url }}" target="_blank" rel="noopener noreferrer">
+      {{ sidebar.lab.name }}
+      <i class="fas fa-arrow-up-right-from-square" aria-hidden="true"></i>
+    </a>
     {% endif %}
 
   </div><!--//profile-container-->

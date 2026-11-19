@@ -4,17 +4,22 @@
 
 sidebar:
   position: right # position of the sidebar : left or right
-  about: True # set to False or comment line if you want to remove the "how to use?" in the sidebar
+  about: False # hide the original theme help and GitHub star block
   education: True # set to False if you want education in main section instead of in sidebar
 
   # Profile information
   name: Gihoon Kim
-  tagline: Master's Student <br> @ Yonsei University
+  name_ko: 김기훈
+  tagline: Master's Student
+  affiliation:
+    name: Yonsei University
+  lab:
+    name: Computational Intelligence Laboratory
+    url: https://cilab.yonsei.ac.kr/
   avatar: profile.jpeg #place a 100x100 picture inside /assets/images/ folder and provide the name of the file below
 
   # Sidebar links
   email: gihoon@yonsei.ac.kr
-  timezone: Asia/Seoul # Enter your timezone, e.g., America/Havana, Africa/Casablanca, America/North_Dakota/Center
   #citizenship:
   #website: https://example.com/ # Include the full website URL, including "http://" or "https://".
   #linkedin: ""
@@ -61,13 +66,22 @@ education:
   title: Education
   info:
   - degree: MSc in Computing
+    degree_ko: 모빌리티시스템융합학과 석사
     university: Yonsei University
+    university_ko: 연세대학교
+    logo: yonsei.png
+    logo_shape: yonsei
     time: 2025.03 - 
+    time_ko: 2025.03 - 현재
     #details: |
     #  Describe your study here lorem ipsum dolor sit amet, consectetuer
     #  adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. 
   - degree: BSc in Mechanical Engineering and Computer Science and Engineering
+    degree_ko: 기계공학 및 컴퓨터공학 학사
     university: Sogang University
+    university_ko: 서강대학교
+    logo: sogang.svg
+    logo_shape: sogang
     time: 2019.03 - 2025.02
     #details: |
     #  Describe your study here lorem ipsum dolor sit amet, consectetuer
@@ -78,7 +92,11 @@ education:
     #    - Bullet point
     #    - Bullet point
   - degree: High School
-    university: Busan Science High School 
+    degree_ko: 고등학교
+    university: Busan Science High School
+    university_ko: 부산과학고등학교
+    logo: busan-science-high.jpg
+    logo_shape: busan
     time: 2016.03 - 2019.02
     #details: |
     #  Describe your study here lorem ipsum dolor sit amet, consectetuer
@@ -93,10 +111,17 @@ experiences:
   title: Experiences
   info:
   - role: Undergraduate Research Intern
+    role_ko: 학부 연구 인턴
     time: Jan 2024 - Feb 2024
+    time_ko: 2024.01 - 2024.02
     company: Korea Institute of Science and Technology (KIST), Center for Artificial Intelligence
+    company_ko: 한국과학기술연구원(KIST) 인공지능연구단
+    logo: kist.png
+    logo_shape: kist
     details: |
       Explored robot manipulation and computer vision algorithms through hands-on practice.
+    details_ko: |
+      로봇 조작 실습 및 컴퓨터 비전 알고리즘 활용 경험
 
 #certifications:
 #  title: Certifications
@@ -129,12 +154,24 @@ projects:
   #  You can list your side projects in this section. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum et ligula in nunc bibendum fringilla a eu lectus.
   assignments:
   - title: Personalized In-Vehicle AI Assistants via User Preference Alignment
+    title_ko: 개인화 정렬 기법을 활용한 차량 AI 어시스턴트의 경로 제안 개인화
     #link: "https://github.com/cobang0111"
-    tagline: "with Hyundai Motor Company, UX Strategy Team (Apr 2025 - Feb 2026)"
+    partner: Hyundai Motor Company, UX Strategy Team
+    partner_line_ko: 현대자동차 UX전략팀
+    partner_logo: hyundai.png
+    partner_logo_shape: hyundai
+    partner_time: Apr 2025 - Feb 2026
+    partner_time_ko: 2025.04 - 2026.02
 
   - title: Shoe Sorting using Object Pose Estimation on a UR Manipulator
+    title_ko: UR 매니퓰레이터를 활용한 객체 자세 추정 기반 신발 정리 로봇 개발
     link: "https://github.com/cobang0111/centerpose_pick_and_place"
-    tagline: "with Korea Institute of Science and Technology (KIST), Center for Artificial Intelligence (Jan 2024 - Feb 2024)"
+    partner: Korea Institute of Science and Technology (KIST), Center for Artificial Intelligence
+    partner_line_ko: 한국과학기술연구원(KIST) 인공지능 연구단
+    partner_logo: kist.png
+    partner_logo_shape: kist
+    partner_time: Jan 2024 - Feb 2024
+    partner_time_ko: 2024.01 - 2024.02
 
 #oss:
 #  title: OSS Contributions
@@ -156,7 +193,18 @@ publications:
   - title: Swap-guided Preference Learning for Personalized Reinforcement Learning from Human Feedback
     link: "https://openreview.net/forum?id=nc28mSbyVG"
     authors: Gihoon Kim and Euntai Kim
-    conference: ICLR 2026
+    logo: iclr.svg
+    logo_shape: iclr
+    conference: The Fourteenth International Conference on Learning Representations
+    conference_short: ICLR 2026
+
+  - title: Cautious Context Steering for Language Model Personalization
+    link: "https://arxiv.org/abs/2608.05813"
+    authors: Gihoon Kim, Jeyoung Lee, Suhan Woo, Jangwon Oh, Sekwon Oh, Minsu Jeon, Euntai Kim
+    logo: arxiv.svg
+    logo_shape: arxiv
+    conference: arXiv preprint
+    conference_short: ICLR 2027 under-review
 
   #- title: "Genetic Programming III: Darwinian Invention &amp; Problem Solving"
   #  link: "#"
@@ -185,4 +233,4 @@ publications:
 
 
 footer: >
-  Designed with <i class="fas fa-heart"></i> by <a href="http://themes.3rdwavemedia.com" target="_blank" rel="nofollow">Xiaoying Riley</a>
+  Theme credit · <a href="http://themes.3rdwavemedia.com" target="_blank" rel="nofollow noopener noreferrer">Xiaoying Riley</a>

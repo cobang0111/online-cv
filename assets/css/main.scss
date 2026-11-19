@@ -16,3 +16,4 @@ $sidebar-order: 2;
 
 @import "skins/{{ site.theme_skin | default: 'blue' }}"; // skin
 @import "default"; // main partials
+@import "modern"; // local liquid-glass and A4 PDF refinements
